@@ -30,9 +30,5 @@ class Portfolio():
 
     def cost(self):        
       return sum(
-          shares * price for name, share, price in self._stocks
+          share * price for name, share, price in self._stocks
       )
-
-
-Apple = Portfolio()
-Apple.buy("AAPL", 10, 100)
