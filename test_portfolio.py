@@ -1,4 +1,5 @@
 # test_portfolio.py
+import pytest
 from portfolio import Portfolio
 
 def test_buy_one_stock():
@@ -15,3 +16,13 @@ def test_buy_two_stocks():
 def test_empty_portfolio():
     p = Portfolio()
     assert p.cost() == 0
+
+def test_buy_zero_shares():
+    p = Portfolio()
+    with pytest.raise(ValueError):
+        p.buy("MSFT",0,100.00)
+
+def test_buy_neg_shares():
+    p = Portfolio()
+    with pytest.raise(ValueError):
+        p.buy("MSFT", -100,100.00)
