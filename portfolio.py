@@ -26,7 +26,7 @@ class Portfolio():
     def __init__(self):
       self._stocks = []
     def buy(self, name, share, price):
-      if shares <= 0:
+      if share <= 0:
         raise ValueError("Shares cannot be 0 or less")
       self._stocks.append((name, share, price))
 
